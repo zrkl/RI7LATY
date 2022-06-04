@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="R_DBModelStoreContainer" CdmEntityContainer="R_DB_Entities">
+    <EntitySetMapping Name="agencies">
+      <EntityTypeMapping TypeName="R_DBModel.agency">
+        <MappingFragment StoreEntitySet="agency">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="agency_name" ColumnName="agency_name" />
+          <ScalarProperty Name="id_ville" ColumnName="id_ville" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="travels">
+      <EntityTypeMapping TypeName="R_DBModel.travel">
+        <MappingFragment StoreEntitySet="travel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_agency" ColumnName="id_agency" />
+          <ScalarProperty Name="beginning" ColumnName="beginning" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="date_start" ColumnName="date_start" />
+          <ScalarProperty Name="date_arrive" ColumnName="date_arrive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="villes">
+      <EntityTypeMapping TypeName="R_DBModel.ville">
+        <MappingFragment StoreEntitySet="ville">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ville_name" ColumnName="ville_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

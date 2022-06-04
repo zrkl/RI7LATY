@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency RI7LATY </title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- app favicon -->
+    <link rel="shortcut icon" href="~/assets/img/logo.png">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- plugin stylesheets -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/vendors.css" />
+    <!-- app style -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css" />
+    @*paginigtion style*@
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- begin app -->
+    <div class="app">
+        <!-- begin app-wrap -->
+        <div class="app-wrap">
+            <!-- begin pre-loader -->
+            <div class="loader">
+                <div class="h-100 d-flex justify-content-center">
+                    <div class="align-self-center">
+                        <img src="~/assets/img/loader/loader.svg" alt="loader">
+                    </div>
+                </div>
+            </div>
+            <!-- end pre-loader -->
+            <!-- begin app-header -->
+            <header class="app-header top-bar">
+                <!-- begin navbar -->
+                <nav class="navbar navbar-expand-md">
+                    <!-- begin navbar-header -->
+                    <div class="navbar-header d-flex align-items-center">
+                        <a href="javascript:void:(0)" class="mobile-toggle"><i class="ti ti-align-right"></i></a>
+                        <a class="navbar-brand" href="~/default/index">
+                            <img src="~/assets/img/logo-icon.png" />
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti ti-align-left"></i>
+                    </button>
+                    <!-- end navbar-header -->
+                    <!-- begin navigation -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navigation d-flex">
+
+
+                        </div>
+                    </div>
+                    <!-- end navigation -->
+                </nav>
+                <!-- end navbar -->
+            </header>
+            <!-- end app-header -->
+            <!-- begin app-container -->
+            <div class="app-container">
+                <!-- begin app-nabar -->
+                <aside class="app-navbar">
+                    <!-- begin sidebar-nav -->
+                    <div class="sidebar-nav scrollbar scroll_light">
+                        <ul class="metismenu " id="sidebarNav">
+                            <li>
+                                <a href="~/Default/Index" aria-expanded="false">
+                                    <i class="fa-solid fa-chart-line"></i></i><span class="nav-title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Annonce/index" aria-expanded="false">
+                                    <i class="fa-solid fa-bullhorn"></i><span class="nav-title">Offers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Login/login" aria-expanded="false">
+                                    <i class="fa-solid fa-bullhorn"></i><span class="nav-title">Exit</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end sidebar-nav -->
+                </aside>
+                <!-- end app-navbar -->
+                <!-- begin app-main -->
+                <div class="app-main" id="main">
+                    <!-- begin container-fluid -->
+                    <div class="container-fluid">
+
+                        @RenderBody()
+
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+                <!-- end app-main -->
+            </div>
+            <!-- end app-container -->
+            <!-- begin footer -->
+            <footer class="footer">
+                <div class="row">
+                    <div class="col-12 col-sm-6 text-center text-sm-left">
+                        <p>&copy; Copyright 2022. All rights reserved.</p>
+                    </div>
+                    <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
+                        <p><a target="_blank" href="https://www.oumdin.net">Oumdin</a></p>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </div>
+        <!-- end app-wrap -->
+    </div>
+    <!-- end app -->
+    <!-- plugins -->
+    <script src="~/assets/js/vendors.js"></script>
+
+    <!-- custom app -->
+    <script src="~/assets/js/app.js"></script>
+    <script src="https://kit.fontawesome.com/b9b5a2cd02.js" crossorigin="anonymous"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+
+    <script type="text/javascript">
+        var elems = document.getElementsByClassName('confirmation');
+        var confirmIt = function (e) {
+            if (!confirm('Are you sure?')) e.preventDefault();
+        };
+        for (var i = 0, l = elems.length; i < l; i++) {
+            elems[i].addEventListener('click', confirmIt, false);
+        }
+    </script>
+
+
+</body>
+</html>

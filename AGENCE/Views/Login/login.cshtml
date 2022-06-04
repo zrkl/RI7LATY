@@ -1,0 +1,108 @@
+﻿@model R.DAL.Context.agency
+
+@{
+    ViewBag.Title = "login";
+    Layout = "";
+}
+
+
+
+@*@using (Html.BeginForm("","",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.pass, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.pass, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.pass, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>RI7LATY Agency Login</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="~/assets/img/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/login res/css/style.css">
+
+</head>
+<body class="img js-fullheight" style="background-image: url('/login res/images/6.jpg');">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                </div>
+            </div>
+            @using (Html.BeginForm("login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row justify-content-center" style="text-align: center;">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="login-wrap p-0">
+                            <form action="#" class="signin-form">
+                                <div class="form-group">
+                                    @*<input type="text" class="form-control" placeholder="Username" required>*@
+                                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", placeholder = "Username" } })
+                                </div>
+                                <div class="form-group">
+                                    @*<input id="password-field" type="password" class="form-control" placeholder="Password" required>*@
+                                    @Html.EditorFor(model => model.pass, new { htmlAttributes = new { @class = "form-control", type = "password", id = "password-field", placeholder = "Password" } })
+                                    @*<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>*@
+                                </div>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary submit px-3" style="background:black;">Sign In</button>
+                                </div>
+                            </form>
+                            <strong style="color:red">@ViewBag.notvalid</strong>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+
+    <script src="login res/js/jquery.min.js"></script>
+    <script src="login res/js/popper.js"></script>
+    <script src="login res/js/bootstrap.min.js"></script>
+    <script src="login res/js/main.js"></script>
+
+</body>
+</html>
+
+

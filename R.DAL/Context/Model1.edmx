@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="R_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agency">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="agency_name" Type="varchar" MaxLength="30" />
+          <Property Name="id_ville" Type="int" />
+          <Property Name="adresse" Type="varchar" MaxLength="500" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="20" />
+          <Property Name="logo" Type="image" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="pass" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="travel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_agency" Type="int" />
+          <Property Name="beginning" Type="int" />
+          <Property Name="destination" Type="int" />
+          <Property Name="date_start" Type="time" Precision="7" />
+          <Property Name="date_arrive" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="ville">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ville_name" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__agency__id_ville__286302EC">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="agency" Type="Self.agency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="agency">
+              <PropertyRef Name="id_ville" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__beginnin__2C3393D0">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="beginning" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__destinat__2D27B809">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__id_agenc__2B3F6F97">
+          <End Role="agency" Type="Self.agency" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agency">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="id_agency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="R_DBModelStoreContainer">
+          <EntitySet Name="agency" EntityType="Self.agency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="travel" EntityType="Self.travel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ville" EntityType="Self.ville" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__agency__id_ville__286302EC" Association="Self.FK__agency__id_ville__286302EC">
+            <End Role="ville" EntitySet="ville" />
+            <End Role="agency" EntitySet="agency" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__beginnin__2C3393D0" Association="Self.FK__travel__beginnin__2C3393D0">
+            <End Role="ville" EntitySet="ville" />
+            <End Role="travel" EntitySet="travel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__destinat__2D27B809" Association="Self.FK__travel__destinat__2D27B809">
+            <End Role="ville" EntitySet="ville" />
+            <End Role="travel" EntitySet="travel" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__id_agenc__2B3F6F97" Association="Self.FK__travel__id_agenc__2B3F6F97">
+            <End Role="agency" EntitySet="agency" />
+            <End Role="travel" EntitySet="travel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="R_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="agency">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="agency_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="id_ville" Type="Int32" />
+          <Property Name="adresse" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ville" Relationship="Self.FK__agency__id_ville__286302EC" FromRole="agency" ToRole="ville" />
+          <NavigationProperty Name="travels" Relationship="Self.FK__travel__id_agenc__2B3F6F97" FromRole="agency" ToRole="travel" />
+        </EntityType>
+        <EntityType Name="travel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_agency" Type="Int32" />
+          <Property Name="beginning" Type="Int32" />
+          <Property Name="destination" Type="Int32" />
+          <Property Name="date_start" Type="Time" Precision="7" />
+          <Property Name="date_arrive" Type="Time" Precision="7" />
+          <NavigationProperty Name="agency" Relationship="Self.FK__travel__id_agenc__2B3F6F97" FromRole="travel" ToRole="agency" />
+          <NavigationProperty Name="ville" Relationship="Self.FK__travel__beginnin__2C3393D0" FromRole="travel" ToRole="ville" />
+          <NavigationProperty Name="ville1" Relationship="Self.FK__travel__destinat__2D27B809" FromRole="travel" ToRole="ville" />
+        </EntityType>
+        <EntityType Name="ville">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ville_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="agencies" Relationship="Self.FK__agency__id_ville__286302EC" FromRole="ville" ToRole="agency" />
+          <NavigationProperty Name="travels" Relationship="Self.FK__travel__beginnin__2C3393D0" FromRole="ville" ToRole="travel" />
+          <NavigationProperty Name="travels1" Relationship="Self.FK__travel__destinat__2D27B809" FromRole="ville" ToRole="travel" />
+        </EntityType>
+        <Association Name="FK__agency__id_ville__286302EC">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="agency" Type="Self.agency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="agency">
+              <PropertyRef Name="id_ville" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__id_agenc__2B3F6F97">
+          <End Role="agency" Type="Self.agency" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="agency">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="id_agency" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__beginnin__2C3393D0">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="beginning" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__travel__destinat__2D27B809">
+          <End Role="ville" Type="Self.ville" Multiplicity="0..1" />
+          <End Role="travel" Type="Self.travel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ville">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="travel">
+              <PropertyRef Name="destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="R_DB_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="agencies" EntityType="Self.agency" />
+          <EntitySet Name="travels" EntityType="Self.travel" />
+          <EntitySet Name="villes" EntityType="Self.ville" />
+          <AssociationSet Name="FK__agency__id_ville__286302EC" Association="Self.FK__agency__id_ville__286302EC">
+            <End Role="ville" EntitySet="villes" />
+            <End Role="agency" EntitySet="agencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__id_agenc__2B3F6F97" Association="Self.FK__travel__id_agenc__2B3F6F97">
+            <End Role="agency" EntitySet="agencies" />
+            <End Role="travel" EntitySet="travels" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__beginnin__2C3393D0" Association="Self.FK__travel__beginnin__2C3393D0">
+            <End Role="ville" EntitySet="villes" />
+            <End Role="travel" EntitySet="travels" />
+          </AssociationSet>
+          <AssociationSet Name="FK__travel__destinat__2D27B809" Association="Self.FK__travel__destinat__2D27B809">
+            <End Role="ville" EntitySet="villes" />
+            <End Role="travel" EntitySet="travels" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="R_DBModelStoreContainer" CdmEntityContainer="R_DB_Entities">
+          <EntitySetMapping Name="agencies">
+            <EntityTypeMapping TypeName="R_DBModel.agency">
+              <MappingFragment StoreEntitySet="agency">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="agency_name" ColumnName="agency_name" />
+                <ScalarProperty Name="id_ville" ColumnName="id_ville" />
+                <ScalarProperty Name="adresse" ColumnName="adresse" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="travels">
+            <EntityTypeMapping TypeName="R_DBModel.travel">
+              <MappingFragment StoreEntitySet="travel">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_agency" ColumnName="id_agency" />
+                <ScalarProperty Name="beginning" ColumnName="beginning" />
+                <ScalarProperty Name="destination" ColumnName="destination" />
+                <ScalarProperty Name="date_start" ColumnName="date_start" />
+                <ScalarProperty Name="date_arrive" ColumnName="date_arrive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="villes">
+            <EntityTypeMapping TypeName="R_DBModel.ville">
+              <MappingFragment StoreEntitySet="ville">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ville_name" ColumnName="ville_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

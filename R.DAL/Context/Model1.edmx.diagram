@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd7015e777ae41d88f0d98cab80824a8" Name="Diagram1">
+        <EntityTypeShape EntityType="R_DBModel.agency" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="R_DBModel.travel" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="R_DBModel.ville" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="R_DBModel.FK__agency__id_ville__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="R_DBModel.FK__travel__id_agenc__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="R_DBModel.FK__travel__beginnin__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="R_DBModel.FK__travel__destinat__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
