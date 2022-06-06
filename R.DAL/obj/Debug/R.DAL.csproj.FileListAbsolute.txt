@@ -10,3 +10,15 @@ C:\Users\loutf\Desktop\RI7LATY FOLDER\R.DAL\obj\Debug\R.DAL.csproj.CopyComplete
 C:\Users\loutf\Desktop\RI7LATY FOLDER\R.DAL\obj\Debug\R.DAL.dll
 C:\Users\loutf\Desktop\RI7LATY FOLDER\R.DAL\obj\Debug\R.DAL.pdb
 C:\Users\loutf\Desktop\RI7LATY FOLDER\R.DAL\obj\Debug\R.DAL.csproj.AssemblyReference.cache
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\R.DAL.dll.config
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\R.DAL.dll
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\R.DAL.pdb
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\EntityFramework.dll
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\EntityFramework.xml
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\obj\Debug\R.DAL.csproj.AssemblyReference.cache
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\obj\Debug\R.DAL.csproj.CoreCompileInputs.cache
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\obj\Debug\R.DAL.csproj.CopyComplete
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\obj\Debug\R.DAL.dll
+C:\Users\loutf\Desktop\PFE\RI7LATY\R.DAL\obj\Debug\R.DAL.pdb

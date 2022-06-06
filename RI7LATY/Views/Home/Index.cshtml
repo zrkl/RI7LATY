@@ -6,9 +6,7 @@
 }
 
 
-@using (Html.BeginForm("index", "home", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
+
 
     <div class="form-horizontal">
 
@@ -192,33 +190,37 @@
                             <div class="search_panel active">
 
                                 <form action="#" id="search_form_1" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-                                    <div class="search_item" style="width: 25%;">
-                                        <div>BEGINNING : </div>
-                                        @Html.DropDownList("beginning", ViewBag.beginning as SelectList, htmlAttributes: new { @class = "destination search_input", required = "required" })
-                                        @*@Html.ValidationMessageFor(model => model.beginning, "", new { @class = "text-danger" })*@
-                                        @*<input type="dropdownlist" class="destination search_input" required="required">*@
-                                    </div>
-
-                                    <div class="search_item" style="width: 25%;">
-                                        <div>DESTINATION : </div>
-                                        @Html.DropDownList("destination", ViewBag.destination as SelectList, htmlAttributes: new { @class = "destination search_input", required = "required" })
-                                        @*@Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger" })*@
-                                        @*<input type="text" class="destination search_input" required="required">*@
-                                    </div>
-
-                                    <div class="search_item">
-                                        <div>check in</div>
-                                        
-                                        <input type="date" id="id_date" name="name_date" class="check_in search_input" placeholder="YYYY-MM-DD" >
-                                    </div>
-
-
-                                    <button class="button search_button">search<span></span><span></span><span></span></button>
-                                    <div class="form-group">
-                                        <div class="col-md-offset-2 col-md-10">
-                                            <input type="submit" value="Create" class="btn btn-default" />
+                                    @using (Html.BeginForm("index", "home", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="search_item" style="width: 25%;">
+                                            <div>BEGINNING : </div>
+                                            @Html.DropDownList("beginning", ViewBag.beginning as SelectList, htmlAttributes: new { @class = "destination search_input", required = "required" })
+                                            @*@Html.ValidationMessageFor(model => model.beginning, "", new { @class = "text-danger" })*@
+                                            @*<input type="dropdownlist" class="destination search_input" required="required">*@
                                         </div>
-                                    </div>
+
+                                        <div class="search_item" style="width: 25%;">
+                                            <div>DESTINATION : </div>
+                                            @Html.DropDownList("destination", ViewBag.destination as SelectList, htmlAttributes: new { @class = "destination search_input", required = "required" })
+                                            @*@Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger" })*@
+                                            @*<input type="text" class="destination search_input" required="required">*@
+                                        </div>
+
+                                        <div class="search_item">
+                                            <div>check in</div>
+
+                                            <input type="date" id="id_date" name="name_date" class="check_in search_input" placeholder="YYYY-MM-DD">
+                                        </div>
+
+
+                                        <button class="button search_button">search<span></span><span></span><span></span></button>
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Create" class="btn btn-default" />
+                                            </div>
+                                        </div>
+                                    }
                                 </form>
                             </div>
 
@@ -231,6 +233,5 @@
         </div>
     </div>
 
-}
 
 
