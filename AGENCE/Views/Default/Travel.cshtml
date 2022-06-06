@@ -1,0 +1,65 @@
+﻿@model IEnumerable<R.DAL.Context.travel>
+
+@{
+    ViewBag.Title = "Travel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="text-align:center">
+    <h2>TRAVELS</h2>
+</div>
+
+
+
+<div class="ml-auto d-flex align-items-center secondary-menu text-center">
+    <a href="@Url.Action("Create","Default")" class="tooltip-wrapper">
+        <i class="fe fe-edit btn btn-icon text-primary"></i>
+    </a>
+
+
+
+
+</div>
+<table class="table">
+    <tr>
+        
+        <th>
+            Beginning
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Start
+        </th>
+        <th>
+            Arrive
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ville.ville_name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ville1.ville_name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.date_start)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.date_arrive)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

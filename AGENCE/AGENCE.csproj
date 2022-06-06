@@ -500,6 +500,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Default\Travel.cshtml" />
+    <Content Include="Views\Default\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
