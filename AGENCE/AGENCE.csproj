@@ -502,6 +502,7 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\Travel.cshtml" />
     <Content Include="Views\Default\Create.cshtml" />
+    <Content Include="Views\Default\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,7 +14,7 @@
     <a href="@Url.Action("Create","Default")" class="tooltip-wrapper">
         <i class="fe fe-edit btn btn-icon text-primary"></i>
     </a>
-
+    <br />
 
 
 
@@ -57,7 +57,15 @@
         </td>
         
         <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            <a href="@Url.Action("Delete", "Default",new {id=item.id})" class="confirmation">
+                <i class="dashicons dashicons-trash" style="font-size: 20px; color: #c90404"></i>
+            </a>
+             | 
+            <a href="@Url.Action("Edit", "Default",new {id=item.id})" class="confirmation">
+                <i class="dashicons dashicons-edit" style="font-size: 20px; color: #ede61a "></i>
+            </a>
+            @*@Html.ActionLink("DELETE", "Delete", new { id = item.id })|
+            @Html.ActionLink("EDIT", "Edit", new { id = item.id })*@
         </td>
     </tr>
 }
