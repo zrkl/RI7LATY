@@ -12,9 +12,33 @@ namespace RI7LATY.Controllers
     public class HomeController : Controller
     {
         R.DAL.Context.R_DB_Entities db = new R.DAL.Context.R_DB_Entities();
-        public ActionResult Index()
+
+        public ActionResult Main()
         {
 
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken, ValidateInput(false)]
+        public async Task<ActionResult> Main(travel travel)
+        {
+
+
+
+            return View();
+        }
+
+
+
+
+
+
+
+
+        public ActionResult Index()
+        {
+            
             var m = new travel();
             ViewBag.agency = new SelectList(db.agencies, "id", "agency_name");
 
