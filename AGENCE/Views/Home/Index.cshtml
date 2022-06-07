@@ -1,0 +1,181 @@
+﻿@model Tuple<R.DAL.Context.travel, IEnumerable<R.DAL.Context.travel>>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+<body>
+
+    @*<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">RI7LATY</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item cta mr-md-2"><a href="new-post.html" class="nav-link" style="background-color: blueviolet; border-color: blueviolet;">Post a Travel</a></li>
+                    <li class="nav-item cta cta-colored"><a href="job-post.html" class="nav-link">Become a collaborator</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>*@
+    <!-- END nav -->
+    
+    <div class="hero-wrap js-fullheight" style="background-image: url('../../images/6.jpg')" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+                <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
+                    <p class="mb-4 mt-5 pt-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">  </span>  </p>
+                    <h1 class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Your Travel <br><span>is Waiting</span></h1>
+
+                    <div class="ftco-search">
+                        <div class="row">
+                            <div class="col-md-12 nav-link-wrap">
+                                <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Find a Travel</a>
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 tab-wrap">
+
+                                <div class="tab-content p-4" id="v-pills-tabContent">
+                                    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                                            <form action="#" class="search-job">
+                                                <div class="row">
+                                                    <div class="col-md">
+                                                        <div class="form-group">
+                                                            <div class="form-field">
+                                                                <div class="icon"></div>
+                                                                @Html.DropDownList("id_agency", ViewBag.id_agency as SelectList, htmlAttributes: new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <div class="form-group">
+                                                            <div class="form-field">
+                                                                <div class="select-wrap">
+                                                                    <div class="icon"></div>
+                                                                    @Html.DropDownList("beginning", null, htmlAttributes: new { @class = "form-control" })
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <div class="form-group">
+                                                            <div class="form-field">
+                                                                <div class="icon"></div>
+                                                                @Html.DropDownList("destination", null, htmlAttributes: new { @class = "form-control" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <div class="form-group">
+                                                            <div class="form-field">
+                                                                <div class="icon"></div>
+                                                                <input type="date" class="x-control form-control" name="this_date"  placeholder="dd/mm/yyyy">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md">
+                                                        <div class="form-group">
+                                                            <div class="form-field">
+                                                                <input type="submit" value="Search" class="form-control btn btn-primary">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    }
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div @ViewBag.hide>
+        <section class="ftco-section bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5 pb-3">
+                    <div class="col-md-7 heading-section text-center ftco-animate">
+                        <span class="subheading">Recently Added Travels</span>
+                        
+                        <h2 class="mb-4">@ViewBag.DATE</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--loop start here-->
+                    @foreach (var item in Model.Item2)
+                    {
+                        <div class="col-md-12 ftco-animate">
+                            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+                                <div class="mb-4 mb-md-0 mr-5">
+                                    <div class="job-post-item-header d-flex align-items-center">
+                                        <h2 class="mr-3 text-black h3"><span class="bg-primary text-white badge py-2 px-3"><h6>start<br>@Html.DisplayFor(modelItem => item.date_start)</h6></span>@Html.DisplayFor(modelItem => item.ville.ville_name)</h2>
+                                        <div class="badge-wrap">
+                                            <h2 class="mr-3 text-black h3"><span class="bg-primary text-white badge py-2 px-3"><h6>arrive<br>@Html.DisplayFor(modelItem => item.date_arrive)</h6></span>@Html.DisplayFor(modelItem => item.ville1.ville_name)</h2>
+                                        </div>
+                                    </div>
+                                    <div class="job-post-item-body d-block d-md-flex">
+                                        <div class="mr-3"><span class="icon-layers"></span><a>RI7LATY</a></div>
+                                        <div><span class="icon-my_location"></span> <span>@Html.DisplayFor(modelItem => item.agency.agency_name)</span></div>
+                                    </div>
+                                </div>
+                                <div class="ml-auto d-flex">
+                                    <h3><a href="job-single.html" class="btn btn-primary py-2 mr-1">Info</a></h3>
+                                </div>
+                            </div>
+                        </div><!-- end -->
+                    }
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</body>
+
+
+
+@*@foreach (var item in Model.Item2)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_arrive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.agency.agency_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ville.ville_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ville1.ville_name)
+        </td>
+
+    </tr>
+}*@

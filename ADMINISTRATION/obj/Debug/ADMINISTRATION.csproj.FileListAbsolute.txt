@@ -128,8 +128,8 @@ C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\bin\roslyn\vbc.exe.config
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\bin\roslyn\vbc.rsp
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\bin\roslyn\VBCSCompiler.exe
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.csproj.AssemblyReference.cache
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.csproj.CoreCompileInputs.cache
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.csproj.CopyComplete
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.dll
 C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.pdb
+C:\Users\loutf\Desktop\PFE\RI7LATY\ADMINISTRATION\obj\Debug\ADMINISTRATION.csproj.AssemblyReference.cache

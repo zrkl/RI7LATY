@@ -13,61 +13,54 @@ namespace RI7LATY.Controllers
     {
         R.DAL.Context.R_DB_Entities db = new R.DAL.Context.R_DB_Entities();
 
+        public ActionResult value()
+        {
+            Session["a"] = 1;
+            Session["b"] = 1;
+            Session["d"] = 1;
+            return RedirectToAction("Index");
+        } 
+
         public ActionResult Index()
         {
-            
-            
-            ViewBag.id_agency = new SelectList(db.agencies, "id", "agency_name");
-            ViewBag.beginning = new SelectList(db.villes, "id", "ville_name");
-            ViewBag.destination = new SelectList(db.villes, "id", "ville_name");
+
+
+            //ViewBag.id_agency = new SelectList(db.agencies, "id", "agency_name");
+            //ViewBag.beginning = new SelectList(db.villes, "id", "ville_name");
+            //ViewBag.destination = new SelectList(db.villes, "id", "ville_name");
 
 
 
-            int bb;
-            int dd;
-            int aa;
+            //int aa=(Int32)Session["a"];
+            //int bb=(Int32)Session["b"];
+            //int dd=(Int32)Session["d"]; 
+            //if (bb == dd || dd==aa)
+            //{
+            //    ViewBag.hide = "hidden";
+            //    var list_T = db.travels.Where(b => b.beginning == 1).Where(d => d.destination == 1).Where(a => a.id_agency == 1).ToList();
+            //    return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
+            //}
+            //else
+            //{
+            //     bb = (Int32)Session["b"];
+            //     dd = (Int32)Session["d"];
+            //     aa = (Int32)Session["a"];
+            //    if (bb == 1 && dd == 1 && aa == 1)
+            //    {
+            //        ViewBag.hide = "hidden";
+            //        var list_T = db.travels.Where(b => b.beginning == 1).Where(d => d.destination == 1).Where(a => a.id_agency == 1).ToList();
+            //        return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
+            //    }
+            //    else
+            //    {
 
-            try
-            {
-                 bb = (Int32)Session["b"];
-                 dd = (Int32)Session["d"];
-                 aa = (Int32)Session["a"];
-            }
-            catch(NullReferenceException e)
-            {
-                e = e;
-                 bb = 0;
-                 dd =0;
-                 aa =0;
-            }
+            //        ViewBag.hide = "";
+            //        var list_T = db.travels.Where(b => b.beginning == (Int32)Session["b"]).Where(d => d.destination == (Int32)Session["d"]).Where(a => a.id_agency == (Int32)Session["a"]).ToList();
+            //        return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
+            //    }
+            //}
 
-            if (bb == 0 && dd ==0 && aa == 0)
-            {
-                ViewBag.hide = "hidden";
-                var list_T = db.travels.Where(b => b.beginning == 1).Where(d => d.destination == 1).Where(a => a.id_agency == 1).ToList();
-                return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
-            }
-            else
-            {
-                 bb = (Int32)Session["b"];
-                 dd = (Int32)Session["d"];
-                 aa = (Int32)Session["a"];
-                if (bb == 1 && dd == 1 && aa == 1)
-                {
-                    ViewBag.hide = "hidden";
-                    var list_T = db.travels.Where(b => b.beginning == 1).Where(d => d.destination == 1).Where(a => a.id_agency == 1).ToList();
-                    return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
-                }
-                else
-                {
-
-                    ViewBag.hide = "";
-                    var list_T = db.travels.Where(b => b.beginning == (Int32)Session["b"]).Where(d => d.destination == (Int32)Session["d"]).Where(a => a.id_agency == (Int32)Session["a"]).ToList();
-                    return View(Tuple.Create<travel, IEnumerable<travel>>(new travel(), list_T));
-                }
-            }
-            
-
+            return View();
 
         }
 
@@ -92,15 +85,7 @@ namespace RI7LATY.Controllers
             return View(travel);
         }
 
-        [HttpGet]
-        public ViewResult iii()
-        {
-            travel TRAVEL = new travel();
-
-            var list_T = db.travels.Where(i => i.beginning == 1).ToList();
-
-            return View(list_T);
-        }
+        
 
     }
 }

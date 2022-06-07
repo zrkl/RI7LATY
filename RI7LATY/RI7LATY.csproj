@@ -465,7 +465,6 @@
     <Content Include="Résultats de votre recherche horaires des trains._files\js" />
     <Content Include="Résultats de votre recherche horaires des trains._files\main.4bfcf53f.chunk.js.download" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\iii.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\R.DAL\R.DAL.csproj">
