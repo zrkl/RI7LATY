@@ -115,8 +115,6 @@ C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\R.DAL.dll
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\R.DAL.pdb
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\R.DAL.dll.config
-C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\EntityFramework.xml
-C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\bin\EntityFramework.SqlServer.xml
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\obj\Debug\AGENCE.csproj.AssemblyReference.cache
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\obj\Debug\AGENCE.csproj.CoreCompileInputs.cache
 C:\Users\loutf\Desktop\PFE\RI7LATY\AGENCE\obj\Debug\AGENCE.csproj.CopyComplete
