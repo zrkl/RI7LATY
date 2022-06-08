@@ -666,9 +666,11 @@
     <Content Include="scss\bootstrap\_variables.scss" />
     <Content Include="scss\style.scss" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\job\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -67,6 +67,7 @@ namespace AGENCE.Controllers
         {
             
             Session["identity"] = id.Value;
+            ViewBag.id = id.Value;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -98,8 +99,9 @@ namespace AGENCE.Controllers
             {
                 R.DAL.Context.travel T = new R.DAL.Context.travel()
                 {
-                    id=identity,
+                    id = identity,
                     id_agency = ID,
+
                     beginning = TRAVEL.beginning,
                     destination = TRAVEL.destination,
                     date_start = TRAVEL.date_start,

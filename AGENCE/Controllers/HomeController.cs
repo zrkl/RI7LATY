@@ -1,7 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 using System.Web;
 using System.Web.Mvc;
 using R.DAL.Context;
@@ -35,7 +44,9 @@ namespace RI7LATY.Controllers
             int bb = (Int32)Session["b"];
             int dd = (Int32)Session["d"];
 
-            if (bb == dd || aa==dd || bb!=aa)
+
+            
+            if (bb == dd || aa==dd)
             {
                 ViewBag.hide = "hidden";
                 ViewBag.DATE = "";
@@ -75,23 +86,37 @@ namespace RI7LATY.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.id_agency = new SelectList(db.agencies, "id", "agency_name", travel.id_agency);
-                ViewBag.beginning = new SelectList(db.villes, "id", "ville_name", travel.beginning);
-                ViewBag.destination = new SelectList(db.villes, "id", "ville_name", travel.destination);
+                
+                    ViewBag.id_agency = new SelectList(db.agencies, "id", "agency_name", travel.id_agency);
+                    ViewBag.beginning = new SelectList(db.villes, "id", "ville_name", travel.beginning);
+                    ViewBag.destination = new SelectList(db.villes, "id", "ville_name", travel.destination);
+                    Session["i"] = travel.id;
+                    Session["a"] = travel.id_agency;
+                    Session["b"] = travel.beginning;
+                    Session["d"] = travel.destination;
 
-                Session["a"] = travel.id_agency;
-                Session["b"] = travel.beginning;
-                Session["d"] = travel.destination;
-
-                var day= this_date.DayOfWeek;
-                var DATE = (day + "  "+ this_date.Year+"/"+this_date.Month+"/"+this_date.Day).ToString();
-                Session["date"] = DATE;
-                ViewBag.DATE = DATE;
-                return RedirectToAction("Index");
+                    var day = this_date.DayOfWeek;
+                    var DATE = (day + "  " + this_date.Year + "/" + this_date.Month + "/" + this_date.Day).ToString();
+                    Session["date"] = DATE;
+                    ViewBag.DATE = DATE;
+                    return RedirectToAction("Index");
+                
+                
             }
 
             return View(travel);
         }
+        private R_DB_Entities DB = new R_DB_Entities();
+        public async Task<ActionResult> Info()
+        {
+            
+            int ID = (Int32)Session["a"];
+            int IDt = (Int32)Session["i"];
+            var info_list = DB.agencies.Where(i => i.id == ID);
+
+            return View(info_list);
+        }
+
 
 
 

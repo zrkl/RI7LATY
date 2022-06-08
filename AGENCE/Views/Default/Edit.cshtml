@@ -5,66 +5,85 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="ml-auto d-flex align-items-center secondary-menu text-center">
+    <a href="@Url.Action("Travel","Default")" class="tooltip-wrapper">
+        <i class="dripicons dripicons-reply" style="font-size: 26px; color:blueviolet"></i>
+    </a>
+    <br />
+
+
+
+</div>
 <h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>travel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id)
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.id_agency, "id_agency", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("id_agency", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.id_agency, "", new { @class = "text-danger" })
+
+
+<!-- start Validation row -->
+<div class="row formavlidation-wrapper">
+    <div class="col-xl-6">
+        <div class="card card-statistics">
+            <div class="card-header">
+                <div class="card-heading">
+                    <h4 class="card-title">Edit Travel No.@ViewBag.id</h4>
+                </div>
             </div>
-        </div>*@
+            <div class="card-body">
+                <form id="signupForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label" for="lname">Beginning</label>
+                        <div class="mb-2">
+                            @Html.DropDownList("beginning", null, htmlAttributes: new { @class = "form-control" })
+                            @*<input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" />*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="lname">Destination</label>
+                        <div class="mb-2">
+                            @Html.DropDownList("destination", null, htmlAttributes: new { @class = "form-control" })
+                            @*<input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" />*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="uname">Start Time</label>
+                        <div class="mb-2">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.beginning, "beginning", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("beginning", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.beginning, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            @Html.EditorFor(model => model.date_start, new { htmlAttributes = new { @class = "form-control", type = "time" } })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.destination, "destination", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("destination", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.date_start, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.date_start, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.date_start, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            @*<input type="text" class="form-control" id="uname" name="uname" placeholder="Username" />*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="uname">Arrive Time</label>
+                        <div class="mb-2">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.date_arrive, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.date_arrive, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.date_arrive, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            @Html.EditorFor(model => model.date_arrive, new { htmlAttributes = new { @class = "form-control", type = "time" } })
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+
+                            @*<input type="text" class="form-control" id="uname" name="uname" placeholder="Username" />*@
+                        </div>
+                    </div>
+                   
+
+                    <div class="form-group">
+
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Edit
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Travel")
+    
 </div>
+}
+<!-- end Validation row  -->
+
+

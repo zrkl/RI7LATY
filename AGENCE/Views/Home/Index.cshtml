@@ -61,7 +61,7 @@
                                                         <div class="form-group">
                                                             <div class="form-field">
                                                                 <div class="icon"></div>
-                                                                @Html.DropDownList("id_agency", ViewBag.id_agency as SelectList, htmlAttributes: new { @class = "form-control" })
+                                                                @Html.DropDownList("id_agency", ViewBag.id_agency as SelectList,"Agency", htmlAttributes: new { @class = "form-control" })
                                                             </div>
                                                         </div>
                                                     </div>
@@ -70,7 +70,7 @@
                                                             <div class="form-field">
                                                                 <div class="select-wrap">
                                                                     <div class="icon"></div>
-                                                                    @Html.DropDownList("beginning", null, htmlAttributes: new { @class = "form-control" })
+                                                                    @Html.DropDownList("beginning", null,"Beginning", htmlAttributes: new { @class = "form-control" })
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -79,7 +79,7 @@
                                                         <div class="form-group">
                                                             <div class="form-field">
                                                                 <div class="icon"></div>
-                                                                @Html.DropDownList("destination", null, htmlAttributes: new { @class = "form-control" })
+                                                                @Html.DropDownList("destination", null,"Destination", htmlAttributes: new { @class = "form-control" })
                                                             </div>
                                                         </div>
                                                     </div>
@@ -143,7 +143,7 @@
                                     </div>
                                 </div>
                                 <div class="ml-auto d-flex">
-                                    <h3><a href="job-single.html" class="btn btn-primary py-2 mr-1">Info</a></h3>
+                                    <h3><a href="@Url.Action("Info","Home")" class="btn btn-primary py-2 mr-1">Info</a></h3>
                                 </div>
                             </div>
                         </div><!-- end -->

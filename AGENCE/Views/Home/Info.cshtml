@@ -1,0 +1,43 @@
+﻿@model IEnumerable<R.DAL.Context.agency>
+
+
+@{
+    ViewBag.Title = "Info";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <section class="ftco-section contact-section bg-light">
+        <div class="container">
+            <div class="row d-flex mb-5 contact-info">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h3">Contact Information</h2>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-md-3">
+                    <p><span>Ville:<br />
+                       <img src="@Html.DisplayFor(modelItem => item.logo)" />
+                       <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.logo))">
+                       </span> @Html.DisplayFor(modelItem => item.ville.ville_name)</p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Address:<br /></span> @Html.DisplayFor(modelItem => item.adresse)</p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Phone:<br /></span> <a>@Html.DisplayFor(modelItem => item.phone)</a></p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Email:<br /></span> @Html.DisplayFor(modelItem => item.email)<a></a></p>
+                </div>
+                <div class="col-md-3">
+                    <p><span>Website :<br /></span> <a href="#">website_<a>@Html.DisplayFor(modelItem => item.agency_name)</a>.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+
+
