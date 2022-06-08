@@ -41,7 +41,7 @@ namespace AGENCE.Controllers
 
 
 
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Travel", "Default");
 
                 }
                 if(user==null)
